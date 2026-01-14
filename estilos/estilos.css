@@ -1,0 +1,486 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #f8fbff, #eff5f8cb, #f8fbff);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(37,99,235,0.15), transparent 60%);
+    pointer-events: none;
+    transition: background-position 0.1s;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background-color: #0b1f3a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.encabezado {
+    background-color: #0b1f3a;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+/* LOGO */
+.logo {
+    height: 70px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* LINKS */
+.nav-links {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #93c5fd;
+}
+
+/* BOTONES */
+.nav-actions button {
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+/* BOTONES NAV */
+.but-acceso {
+    background: transparent;
+    color: #e5e7eb;
+    border: 1px solid #93c5fd;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.but-registro {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 6px;
+}
+
+.but-acceso:hover,
+.but-registro:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+/* MENÚ HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #93c5fd;
+}
+
+/* HERO */
+.introduccion {
+    text-align: center;
+    padding: 80px 10px;
+}
+
+.introduccion h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.introduccion h2 span {
+    color: #2563eb;
+}
+
+.intro-text {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.intro-text p {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 22px;
+}
+
+
+/* CONTENIDO */
+.contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 80px 40px;
+}
+
+.contenido-img {
+    flex: 0 0 auto;
+}
+
+.contenido-img img {
+    max-width: 360px;
+    width: 100%;
+}
+
+.contenido-texto {
+    max-width: 520px;
+}
+
+.contenido-texto {
+    flex: 1;
+    max-width: 520px;
+}
+
+.contenido-texto h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.contenido-texto h2 span {
+    color: #2563eb;
+}
+
+.contenido-texto p {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #4a5568;
+}
+
+.estudio {
+    width: 100%;
+    max-width: 420px;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    animation: float 4s ease-in-out infinite;
+}
+
+.estudio:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .contenido-texto {
+        max-width: 100%;
+    }
+}
+
+/* FORMULARIO */
+.formulario {
+    background-color: white;
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.formulario p {
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: clamp(16px, 2vw, 18px);
+}
+
+/* FORM */
+.contacto-form ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.contacto-form li {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.contacto-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.contacto-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.contacto-form input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+/* BOTÓN */
+.envio-form {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.envio-form:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0b1f3a;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+/* ANIMACIONES FADE-IN */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+    .logo {
+        height: 60px;
+    }
+    .nav-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+        align-self: flex-end;
+    }
+
+    .nav-logo {
+        order: -1;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        background-color: #0b1f3a;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .nav-links a {
+        padding: 12px;
+        display: block;
+        text-align: center;
+        border-bottom: 1px solid #374151;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-actions {
+        display: none; /* Oculta botones en móvil */
+    }
+
+    .introduccion {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .contenido {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .formulario {
+        margin: 20px auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+    .logo {
+        height: 50px;
+    }
+    .introduccion p {
+        font-size: 14px;
+    }
+    .contenido h2 {
+        font-size: 24px;
+    }
+    .contenido p {
+        font-size: 14px;
+    }
+    .formulario {
+        padding: 15px;
+    }
+    .contacto-form input {
+        padding: 8px;
+    }
+    .envio-form {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* BENEFICIOS */
+.beneficios {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.beneficios h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #0b1f3a;
+}
+
+/* GRID */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* CARD */
+.card-beneficio {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.card-beneficio:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+/* ICONO */
+.card-beneficio .icono {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* TEXTO */
+.card-beneficio h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+}
+
+.card-beneficio p {
+    font-size: 15px;
+    color: #4b5563;
+}
+
+.card-beneficio {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.card-beneficio.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
